@@ -15,10 +15,12 @@ const RestaurantSchema = new mongoose.Schema({
         type: String,
        
     },
+    
     cityId: {
         type: mongoose.Schema.Types.ObjectId,
         ref: 'City'
     }, 
+    
     location: {
         lat: { type: Number},
         lng: { type: Number},
