@@ -52,20 +52,21 @@ restaurantsRouter.get("/tag/:tag", async (req, res) => {
 })
 
 //FIND RESTAURANT BY TAG AND CITY at the same time
-restaurantsRouter.get("/tag/:tag/:city", async (req, res) => {
-    const {tag, city} = req.params;
+// restaurantsRouter.get("/search", async (req, res) => {
+//     const {tag} = req.query.tag;
+//     const {city} = req.query.city
 
-//asian, berlin
-    try {
-        const response = await Restaurant.find({tags: tag, cityId:{name:city}  });
-              if(!response.length){
-                return res.json({message: `No restaurants in ${city} with the tag ${tag} found.`})}
-                res.json(response)
+// //asian, berlin
+//     try {
+//         const response = await Restaurant.find({tags: tag, cityId:{name:city}  });
+//               if(!response.length){
+//                 return res.json({message: `No restaurants in ${city} with the tag ${tag} found.`})}
+//                 res.json(response)
      
-    } catch(err){
-        res.status(500).json(err)
-    }
-})
+//     } catch(err){
+//         res.status(500).json(err)
+//     }
+// })
 
 
 
